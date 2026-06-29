@@ -94,8 +94,18 @@
 
 @media (max-width: 768px) {
   .team-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
+  
+  /* Member 1 Photo */
+  .team-cell:nth-child(1) { order: 1; }
+  /* Member 1 Info */
+  .team-cell:nth-child(3) { order: 2; }
+  /* Member 2 Photo */
+  .team-cell:nth-child(2) { order: 3; }
+  /* Member 2 Info */
+  .team-cell:nth-child(4) { order: 4; }
   
   .team-photo-cell {
     height: 400px;
