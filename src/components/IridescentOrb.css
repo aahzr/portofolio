@@ -1,0 +1,95 @@
+.orb-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orb {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: orbRotate 10s linear infinite;
+}
+
+.orb-inner {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%, #ff9a76 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, #e84393 0%, transparent 45%),
+    radial-gradient(circle at 50% 70%, #6c5ce7 0%, transparent 50%),
+    radial-gradient(circle at 25% 60%, #00b894 0%, transparent 40%),
+    radial-gradient(circle at 75% 65%, #fdcb6e 0%, transparent 45%),
+    conic-gradient(
+      from 0deg,
+      #ff6b35,
+      #ff4d6a,
+      #e84393,
+      #c44dff,
+      #6c5ce7,
+      #4d94ff,
+      #00d2ff,
+      #00b894,
+      #fdcb6e,
+      #ff9a76,
+      #ff6b35
+    );
+}
+
+.orb-highlight {
+  position: absolute;
+  top: 12%;
+  left: 18%;
+  width: 45%;
+  height: 35%;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.5) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: rotate(-25deg);
+  filter: blur(3px);
+}
+
+.orb-reflection {
+  position: absolute;
+  bottom: 15%;
+  right: 20%;
+  width: 30%;
+  height: 20%;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(4px);
+}
+
+.orb-glow {
+  position: absolute;
+  inset: -30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 67, 147, 0.2) 0%, rgba(108, 92, 231, 0.1) 40%, transparent 70%);
+  filter: blur(20px);
+  animation: glowPulseOrb 4s ease-in-out infinite alternate;
+}
+
+@keyframes orbRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glowPulseOrb {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}

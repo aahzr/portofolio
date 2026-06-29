@@ -1,0 +1,68 @@
+.chromatic-wave {
+  width: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+.wave-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Combine draw-in animation and floating animation */
+.wave-path {
+  /* Using exact physical length approximation (1800) prevents browser pathLength="1" bugs */
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800;
+
+  /* 'both' fill mode ensures it stays hidden during delay, AND stays fully drawn after completion */
+  animation:
+    drawWave 5s cubic-bezier(0.2, 0.8, 0.2, 1) both,
+    waveFloat 8s ease-in-out infinite alternate;
+}
+
+/* Draws the wave from left to right, fading stroke-opacity to hide the initial stroke-linecap blobs */
+@keyframes drawWave {
+  0% {
+    stroke-dashoffset: 1800;
+    stroke-opacity: 0;
+  }
+
+  5% {
+    stroke-opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
+  }
+}
+
+
+
+/* Make the entire wave undulate and flow to the right */
+@keyframes waveFloat {
+  0% {
+    transform: translate(-20px, 0px) scaleY(0.98);
+  }
+
+  100% {
+    transform: translate(20px, -15px) scaleY(1.03);
+  }
+}
+
+/* Ambient glow pulse */
+.wave-glow {
+  animation: glowPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0.15;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}

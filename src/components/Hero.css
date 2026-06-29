@@ -1,0 +1,144 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 280px 1fr 280px;
+  align-items: start;
+  gap: var(--gap-lg);
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Side text areas */
+.hero-side-left,
+.hero-side-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.hero-side-right {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.hero-side-text {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Center title */
+.hero-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-title {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.hero-title-line {
+  overflow: visible;
+  position: relative;
+}
+
+.hero-title-we {
+  font-size: clamp(70px, 10vw, 140px);
+  color: var(--text-primary);
+  display: block;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -0.3em;
+}
+
+.hero-title-name {
+  font-size: clamp(80px, 12vw, 180px);
+  display: block;
+  line-height: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title-role {
+  font-size: clamp(60px, 9vw, 130px);
+  color: rgba(255, 255, 255, 0.35);
+  display: block;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  margin-top: -0.25em;
+}
+
+/* Wave wrapper */
+.hero-wave-wrapper {
+  width: 180%;
+  max-width: 1500px;
+  margin-top: -80px;
+  position: relative;
+  z-index: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 200px 1fr 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-side-left,
+  .hero-side-right {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-side-left {
+    order: 1;
+  }
+
+  .hero-center {
+    order: 0;
+  }
+
+  .hero-side-right {
+    order: 2;
+  }
+
+  .hero-title-we {
+    font-size: 48px;
+  }
+
+  .hero-title-name {
+    font-size: 64px;
+  }
+
+  .hero-title-role {
+    font-size: 44px;
+  }
+}

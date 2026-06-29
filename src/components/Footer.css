@@ -1,0 +1,124 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--section-padding-y);
+  overflow: hidden;
+}
+
+/* Footer info row */
+.footer-info {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 0.8fr;
+  gap: var(--gap-xl);
+  padding-bottom: 80px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.footer-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-info-col-right {
+  align-items: flex-end;
+}
+
+.footer-info-title {
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.footer-info-text {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.footer-link {
+  font-size: 16px;
+  color: var(--text-primary);
+  line-height: 1.7;
+  transition: color 0.3s ease;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+
+.footer-link:hover {
+  color: var(--text-primary);
+  text-decoration-color: var(--text-primary);
+}
+
+/* Large stacked brand name */
+.footer-brand {
+  padding: 40px 0 0;
+  overflow: hidden;
+}
+
+.footer-brand-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding-bottom: 0;
+  /* Push the bottom of the text slightly off-screen for dramatic effect */
+  transform: translateY(15%);
+}
+
+.footer-brand-text {
+  font-family: var(--font-heading);
+  font-size: clamp(100px, 16vw, 260px);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.85;
+  letter-spacing: -4px;
+  user-select: none;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+/* Gradient opacity layers: dark → medium → bright */
+.footer-brand-1 {
+  color: rgba(255, 255, 255, 0.05);
+}
+
+.footer-brand-2 {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.footer-brand-3 {
+  color: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.95) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footer-info {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-lg);
+  }
+
+  .footer-info-col-right {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-info {
+    grid-template-columns: 1fr;
+    gap: var(--gap-lg);
+  }
+
+  .footer-brand-text {
+    font-size: 64px;
+    letter-spacing: -2px;
+  }
+}
