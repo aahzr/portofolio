@@ -5,6 +5,7 @@ import project1Img from '../assets/1.png'
 import project2Img from '../assets/2.png'
 import project3Img from '../assets/3.png'
 import project4Img from '../assets/4.png'
+import project5Img from '../assets/5.png'
 
 const projects = [
   {
@@ -30,9 +31,16 @@ const projects = [
   },
   {
     id: 4,
+    category: 'Web and Mobile Application',
+    title: 'Finance App with AI',
+    span: 'wide',
+    image: project5Img,
+  },
+  {
+    id: 5,
     category: 'Web Application',
     title: 'Profil Rumah Makan',
-    span: 'wide',
+    span: 'normal',
     image: project2Img,
   },
 ]

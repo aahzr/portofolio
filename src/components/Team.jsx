@@ -1,6 +1,6 @@
 import './Team.css'
-import team1 from '../assets/team1.JPG'
-import team2 from '../assets/team2.JPG'
+import team1 from '../assets/team1.jpg'
+import team2 from '../assets/team2.jpeg'
 
 export default function Team() {
   return (
